@@ -1,0 +1,77 @@
+body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Logo canto esquerdo */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.logo img {
+  width: 100px;
+}
+
+/* Card central */
+.container {
+  background-color: #333;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
+  text-align: center;
+  width: 350px;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Botões */
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn, .btn1 {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  cursor: pointer;
+  box-shadow: 0px 0px 6px white;
+  text-decoration: none;
+}
+
+.btn:hover, .btn1:hover {
+  background-color: darkred;
+}
+.erro{
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 25px;  
+}

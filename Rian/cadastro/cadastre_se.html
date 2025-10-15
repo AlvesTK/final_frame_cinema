@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="stl_cadastro.css">
+    <link rel="icon" type="image/png" href="/imgs,etc/logo.png">
+</head>
+
+<body>
+    <!-- Logo no canto esquerdo -->
+    <div class="logo">
+        <img src="/imgs,etc/logo.png" alt="Logo">
+    </div>
+
+    <!-- Card de Registro -->
+    <div class="container">
+        <h1>Cadastro</h1>
+        <form onsubmit="return validarSenha()">
+            <input type="text" placeholder="Digite seu nome completo" required minlength="3">
+            <input type="email" placeholder="exemplo@gmail.com" required pattern=".+@gmail\.com">
+            <input id="senha" type="password" placeholder="Crie sua senha (mínimo 8 caracteres)" required minlength="8"
+                maxlength="8">
+            <input id="confirmar" type="password" placeholder="Confirme sua senha" required minlength="8" maxlength="8">
+
+            <!-- Mensagem de erro -->
+            <p class="erro" id="erro-senha" style="color: red; font-size: 14px; display: none;">
+                As senhas não coincidem.
+            </p>
+
+            <div class="botoes">
+                <button type="submit" class="btn">Registrar</button>
+                <a type="button" class="btn1" href="/framefinal.html">Voltar</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validarSenha() {
+            let senha = document.getElementById("senha").value;
+            let confirmar = document.getElementById("confirmar").value;
+            let erro = document.getElementById("erro-senha");
+
+            if (senha !== confirmar) {
+                erro.style.display = "block"; // mostra o erro
+                return false; // impede o envio
+            } else {
+                erro.style.display = "none"; // esconde se estiver certo
+                return true; // permite o envio
+            }
+        }
+    </script>
