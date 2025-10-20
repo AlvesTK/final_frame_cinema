@@ -1,0 +1,9 @@
+PÁGINAS NECESSÁRIAS DO FRONT-END
+- catálogo - sem conta(HOME): O
+- catálogo - possui conta:  -
+- Minha conta: -
+- informações filme com adc/comp ing: -
+- login/cadastro: -
+- carrinho: -
+- Resut. pesq. filme(opc): -
+- seções recomendados, em alta, dublados, etc(opc): -
