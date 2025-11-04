@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/css/sinopse.css"
+    />
+
+  </head>
+  <body>
+    <div class="side-nav" id="mySideNav">
+      <button type="button" class="closebtn" onclick="closeNav()">
+        &times;
+      </button>
+      <a href="#">Minha conta</a>
+      <a href="#">Home</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contatos</a>
+      <a href="#">FAQs</a>
+    </div>
+
+    <div id="main">
+      <button type="button" class="opn-btn" onclick="openNav(); hidebtn();">
+        &#x2630;
+      </button>
+      <div class="banner"></div>
+      <div class="bg-2">
+        <div class="card-filme">
+          <img id="capa"
+            src="https://imgs.search.brave.com/TXVV526RqihhpaffcuPy25dby007tVxugGVn6JZmugA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/cG9zdGVyLWZvci1k/ZW1vbi1zbGF5ZXIt/a2ltZXRzdS1uby15/YWliYS1pbmZpbml0/eS1jYXN0bGUtdjAt/MW1zNnZsOHcyMm1l/MS5qcGVnP3dpZHRo/PTY0MCZjcm9wPXNt/YXJ0JmF1dG89d2Vi/cCZzPTRmNDRhZTEz/MmM2MDQ0YWIzMTkw/OTYzOWQ4N2Y5N2Q1/MzAwMDhiNDA"
+            alt=""
+            Demon-Slayer
+            class="cartao-img"
+          />
+          <button type="button" class="btn btn-danger rounded-pill px-3" id="btnComprarIngresso" onclick="comprarIngresso()">
+          Comprar ingresso
+        </button>
+        </div>
+        <div class="comprar-ingresso">
+          
+        </div>
+        <div class="dados-filme">
+          <div class="info">
+            <div class="sub-info1">
+              <h3 id="titulo">Demon-Slayer: Castelo Infinito</h3>
+            </div>
+            <div class="sub-info2">
+              <h6>Duração:</h6>
+              <p id="duracao">2h 36min</p>
+            </div>
+            <div class="sub-info3">
+              <h6>Gênero:</h6>
+              <p id="genero">Animação, Ação</p>
+            </div>
+            <div class="sub-info4">
+              <h6>Classificação:</h6>
+              <p id="classificacao" >18+</p>
+            </div>
+            
+          </div>
+          <div class="texto-sinopse">
+            <h6>Sinopse</h6>
+            <p id="sinopse">
+              Em Demon Slayer: Kimetsu no Yaiba - Castelo Infinito, a vida do jovem Tanjiro muda por completo quando descobre que sua família foi assassinada por uma raça demoníaca conhecida como Onis. A única sobrevivente deste massacre foi Nezuko, irmã de Tanjiro, que não saiu ilesa desse confronto e foi transformada em um demônio. Diante dessa trágica e sombria circunstância, ele parte numa jornada em busca de uma cura para Nezuko. Para isso, decide se juntar a uma organização dedicada a caçar demônios, pronto para também matar o responsável pela morte de seus pais. Enquanto se fortalece e aprofunda seus laços com outros membros da tropa de caçadores, Tanjiro enfrenta diferentes inimigos em parceria com seus companheiros Zenitsu Agatsuma e Inosuke Hashibira. Ao lado também dos espadachins mais poderosos da organização, tudo precisará valer a pena. No rigoroso programa de fortalecimento coletivo, suas habilidades serão precisas para fazê-lo escapar de um espaço misterioso onde ocorrerá a batalha final.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/js/filmes.js"></script>
+  <script src="/js/sinopse.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySideNav").style.width = "240px";
+      document.getElementById("main").style.marginLeft = "240px";
+    }
+    function closeNav() {
+      document.getElementById("mySideNav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      showbtn();
+    }
+    function hidebtn() {
+      const btn = document.querySelector(".opn-btn");
+      btn.style.opacity = "0";
+      setTimeout(() => (btn.style.visibility = "hidden"), 300);
+    }
+    function showbtn() {
+      const btn = document.querySelector(".opn-btn");
+      btn.style.visibility = "visible";
+      btn.style.opacity = "1";
+    }
+
+    function arrowColor() {
+      const setas = document.querySelectorAll(".seta");
+
+      setas.forEach((seta) => {
+        seta.addEventListener("click", () => {
+          seta.style.color = "red";
+          setTimeout(() => {
+            seta.style.color = "";
+          }, 100);
+        });
+      });
+    }
+  </script>
+  <footer
+    class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+  >
+    <p class="col-md-4 mb-0 text-body-secondary" style="color: white !important;">&copy; 2025 Company, Inc</p>
+
+    <a
+      href="/"
+      class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+      aria-label="Bootstrap"
+    >
+      <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+    </a>
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">Features</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">About</a>
+      </li>
+    </ul>
+  </footer>
+</html>
