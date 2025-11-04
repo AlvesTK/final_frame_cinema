@@ -1,0 +1,159 @@
+.form-control-dark {
+  border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+.text-small {
+  font-size: 85%;
+}
+.dropdown-toggle:not(:focus) {
+  outline: 0;
+}
+.meu-header {
+    background-color: rgb(121, 9, 9) !important;
+}
+.btn-warning {
+    background-color: rgb(241, 239, 239) !important;
+    border-color: #fffefe;
+}
+
+.logo-header{
+  height: 40px;
+  width: auto;
+}
+.banner{
+  width: 100%;
+  height: 35vh;
+  background: 
+  linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 20%),
+  linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0,0,0,0) 20%),
+  url("https://wallpapercave.com/wp/wp4016031.jpg") center/cover no-repeat;
+}
+.text-secondary{
+  color: white !important;
+}
+body {
+  background-color: rgb(20, 20, 20) !important;
+  height: 800px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.titulo-secao{
+  color: white;
+  text-shadow: black;
+  margin-left:20vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.secao{
+  display: flex;
+  justify-content: space-between;
+}
+.secao .px-3{
+  margin-right: 20vh;
+  margin-top: 2vh;
+  border-radius: 8px !important;
+  height: 40px;
+  background-color: red;
+}
+
+.carousel-conteiner{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+/*LISTA DE FILMES*/
+.filmes{
+  display: flex;
+  gap: 1px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  list-style: none;
+  width: 90%;
+  margin: auto;
+  scrollbar-width: none;
+}
+.filmes > li {
+  padding: 15px 15px;
+
+}
+/*FORMATAÇÃO PADRÃO DOS CARTAZES*/
+.cartao{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 180px;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.3), 0 6px 20px 0 rgb(0, 0, 0, 0.19);
+  text-align: center;
+  transition: all 0.2s ease-in-out, box-shadow 0.2s ease;
+}
+.cartao-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.ver-mais{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  background-color: red;
+  color: white;
+  border: none;
+}
+.cartao:hover{
+  transform: scale(1.10);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+  background-size: 110%;
+  outline-style: solid;
+  outline-color: red;
+  outline-width: 2px;
+}
+.cartao:hover .ver-mais{
+  opacity: 1;
+  transform: translateY(0);
+}
+/*TÍTULO DOS FILMES*/
+.texto-cartao p {
+  color: white;
+  text-align: center;
+  margin: 0;
+  
+}
+/*SETA SCROLL*/
+.seta{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+.seta-esquerda{left:0;}
+.seta-direita{right: 0;}
+.col-md-4{
+  color: white !important;
+}
+.px-2{
+  color: white !important;
+}

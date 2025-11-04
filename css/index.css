@@ -1,0 +1,81 @@
+html {
+    background-color: rgb(0, 0, 0);
+}
+
+body {
+    background: black;
+    display: flex;
+    justify-content: center; /* centraliza tudo na horizontal */
+    align-items: center; /* centraliza na vertical */
+    height: 100vh;
+    margin: 0;
+    gap: 350px; /* espaço entre o logo e a caixa de login */
+}
+
+/* Logo centralizado mais à esquerda */
+.logo {
+    width: 500px; /* aumenta o tamanho do logo */
+    margin-right: 50px; /* opcional: controla a distância do logo até a caixa */
+}
+
+/* Caixa de login */
+.login-box {
+    background: #333;
+    padding: 30px;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+/* Título */
+.login-box {
+    color: #ffff;
+    background: #333;
+    padding: 40px; /* aumenta o espaço interno */
+    text-align: center;
+    width: 400px;
+    height: auto; /* deixa ajustar conforme o conteúdo */
+    border-radius: 8px; /* mais quadrado */
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Inputs */
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    display: block;
+    width: 90%;
+    padding: 12px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+/* Botões */
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn,
+.btn1 {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover,
+.btn1:hover {
+    background-color: darkred;
+}
