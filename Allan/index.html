@@ -1,62 +1,75 @@
 <!DOCTYPE html>
-<html>
-    <head> 
-         <title>
-        Cadastro
-    </title>
-    <meta name="description" content="Cadastro do site"
-    
-    <head>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snack Bar de Cinema</title>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-    <header>
-        <h1>Frame Final<h1>
-    </header>
-     <h2>Cadastro</h2>
-    <main>
-        <section>
-            <h3>Preencha os seus dados abaixo<h3><
-             <form>
-            <input type="text" nome="resposta 1" id="resp 1"
-            placeholder="Escreva seu nome completo">   
-             <section>
-                 <form>
-            <input type="text" e-mail="resposta 2" id="resp 2"
-            placeholder="Escreva seu e-mail"
-            </form>
-             </section>       
-          
-    
-       
-        <section>
-            <input type="text" cpf="resposta 3" id="resp 3"
-            placeholder="Escreva seu CPF">
-        </section>
-        <section>
-            <input type="text" telefone="resposta 4" id="resp 4"
-            placeholder="Escreva seu telefone">
-            <section>
-                <button type="submit">Enviar</button>
-            </section>
-            <section>
-                <h3>
-                    Crie uma senha segura de no mínimo 8 caracteres:
-                </h3>
-                <form>
-                    <input type="senha" senha="resposta 5" id="resp 5"
-                    placeholder="Escreva sua senha">
-                </form>
-                <form>
-                    <input type="senha" senha="resposta 6" id="resp 6"
-                    placeholder="Confirme sua senha">
-                </form>
-            </section>
-            <section>
-                 <button type="submit">Enviar</button>
-            </section>
+  <div class="container">
+    <h1>🍿 Snack Bar</h1>
+    <h2>Que tal um lanche para acompanhar?</h2>
 
-    </main>
+    <div class="menu">
+      <div class="item">
+        <img src="pipoca.png.jpg" alt="Pipoca">
+        <h3>Pipoca Grande</h3>
+        <p>R$ 18,00</p>
+        <button onclick="adicionarItem('Pipoca Grande', 18)">Adicionar</button>
+      </div>
+
+      <div class="item">
+        <img src="refrigerante.png" alt="Refrigerante">
+        <h3>Refrigerante</h3>
+        <p>R$ 10,00</p>
+        <button onclick="adicionarItem('Refrigerante', 10)">Adicionar</button>
+      </div>
+
+      <div class="item">
+        <img src="doces sortidos.webp" alt="Doces">
+        <h3>Doces Sortidos</h3>
+        <p>R$ 12,00</p>
+        <button onclick="adicionarItem('Doces Sortidos', 12)">Adicionar</button>
+      </div>
+
+      <div class="item">
+        <img src="combo.jpg" alt="Combo">
+        <h3>Combo</h3>
+        <p>R$ 45,00</p>
+        <button onclick="adicionarItem('Combo 2 Pipocas + 2 Bebidas', 45)">Adicionar</button>
+      </div>
+
+      <div class="item">
+        <img src="hotdog.jpg" alt="Hot Dog">
+        <h3>Hot Dog</h3>
+        <p>R$ 14,00</p>
+        <button onclick="adicionarItem('Hot Dog', 14)">Adicionar</button>
+      </div>
+
+      <div class="item">
+        <img src="agua.jpg" alt="Água">
+        <h3>Água</h3>
+        <p>R$ 6,00</p>
+        <button onclick="adicionarItem('Água', 6)">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="carrinho">
+      <h3>🛒 Carrinho</h3>
+      <ul id="listaCarrinho"></ul>
+      <div class="carrinho-total">Total: R$ <span id="total">0,00</span></div>
+      <div style="text-align: right; margin-top: 10px;">
+        <button id="finalizarBtn" class="finalizar">Finalizar Pedido</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="snackbar">Item adicionado ao carrinho!</div>
+
+  
+ <script src="scripts.js"></script>
 </body>
-
 </html>
-   
-
