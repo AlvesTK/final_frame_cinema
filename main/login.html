@@ -4,15 +4,11 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Frame Final</title>
+    <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/index.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='framefinal.css'>
+    <script src='login.js'></script>
 </head>
-<meta charset="UTF-8">
-<title>Login</title>
-<link rel="icon" type="image/png" href="/imgs,etc/logo.png"> <!-- aqui vai sua logo -->
-<link rel="stylesheet" href="/imgs,etc/logo.png">
 
 <body>
     <!-- Logo no canto -->
@@ -20,17 +16,33 @@
     <!-- Caixa de login -->
     <div class="login-box">
         <h1>Login</h1>
-        <form action="/tela inicial/tela_inicial.html" method="POST">
-            <input type="email" placeholder="exemplo@gmail.com" required>
-            <input type="password" placeholder="Digite sua senha" required minlength="8" maxlength="8">
+        <form id="loginForm">
+            <input type="email" placeholder="exemplo@gmail.com" required id="usuario">
+            <input type="password" placeholder="Digite sua senha" required minlength="8" maxlength="8" id="senha">
 
             <div class="botoes">
-                <a href="cadastre_se.html" class="btn1">Registre-se</a>
-                <button type="submit" class="btn" id="entrar" href="home.html">Entrar</button>  
+                <a href="" class="btn1">Registre-se</a>
+                <button type="submit" class="btn">Entrar</button>
             </div>
-
-            <script>
-                // fazer javascript para checar se variavel global que armazena cadastro é igual a tentativa de login, armazenando em cache.
-            </script>
         </form>
     </div>
+    <script>
+       const SENHA_TESTE = '12345678'; // apenas para teste — não persista
+
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const usuario = document.getElementById('usuario').value;
+            const senha = document.getElementById('senha').value;
+
+            if (senha === SENHA_TESTE) {
+                sessionStorage.setItem('usuarioLogado', usuario);
+                sessionStorage.setItem('logado', 'true');
+                location.href = '/home.html';
+            } else {
+                location.href = '/cadastro/cadrastre_se.html';
+            }
+        });
+    </script>
+</body>
+
+</html>
