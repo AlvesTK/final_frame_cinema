@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,348 +12,207 @@
     />
     <link rel="stylesheet" href="/css/home.css" />
   </head>
-  <header class="p-3 text-bg-dark meu-header">
-    <div class="container">
-      <div
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-      >
-        <div class="logo"></div>
-        <img
-          src="imagens/FRAME_FINAL2_SEM_EFEITO.png"
-          alt="logo"
-          class="logo-header"
-        />
-        <ul
-          class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-        >
-          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-          <!-- -->
-          <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+  <body>
+    <div class="side-nav" id="mySideNav">
+      <button type="button" class="closebtn" onclick="closeNav()">
+        &times;
+      </button>
+      <a href="#">Minha conta</a>
+      <a href="#">Home</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contatos</a>
+      <a href="#">FAQs</a>
+    </div>
+
+    <div id="main">
+      <button type="button" class="opn-btn" onclick="openNav(); hidebtn();">
+        &#x2630;
+      </button>
+      <div class="banner"></div>
+      <div class="secao">
+        <h2 class="titulo-secao">Recomendados</h2>
+        <button type="button" class="btn btn-danger rounded-pill px-3">
+          Ver tudo
+        </button>
+      </div>
+      <div class="carousel-conteiner">
+        <button class="seta seta-esquerda" onclick="arrowColor()">
+          &#10094;
+        </button>
+        <ul class="filmes">
+          <li id="filme1">
+            <div class="cartao">
+              <img
+                src="https://imgs.search.brave.com/TXVV526RqihhpaffcuPy25dby007tVxugGVn6JZmugA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/cG9zdGVyLWZvci1k/ZW1vbi1zbGF5ZXIt/a2ltZXRzdS1uby15/YWliYS1pbmZpbml0/eS1jYXN0bGUtdjAt/MW1zNnZsOHcyMm1l/MS5qcGVnP3dpZHRo/PTY0MCZjcm9wPXNt/YXJ0JmF1dG89d2Vi/cCZzPTRmNDRhZTEz/MmM2MDQ0YWIzMTkw/OTYzOWQ4N2Y5N2Q1/MzAwMDhiNDA"
+                alt=""
+                Demon-Slayer
+                class="cartao-img"
+              />
+              <div>
+                <button class="ver-mais" onclick="abrirSinopse(1)">Ver mais</button>
+              </div>
+            </div>
+            <div class="texto-cartao">
+              <p>Demon Slayer:<br />Castelo Infinito</p>
+            </div>
+          </li>
+          <li id="filme2">
+            <div class="cartao">
+              <img
+                src="https://image.tmdb.org/t/p/original/rt1vZDwY9tIEOzLKMNRohW2DIZy.jpg"
+                alt="Superman"
+                class="cartao-img"
+              />
+              <div>
+                <button class="ver-mais"onclick="abrirSinopse(2)">Ver mais</button>
+              </div>
+            </div>
+            <div class="texto-cartao">
+              <p>Superman</p>
+            </div>
+          </li>
+          <li id="filme3">
+            <div class="cartao">
+              <img
+                src="https://imgs.search.brave.com/Xiv70oB-oAFWJhkcTBx-csutfgPlzYFP4j5_RxIDNUI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QllqSTRZekEz/TkdRdE9EZGtaUzAw/TjJFekxUZzVaVE10/WkRBd016QmhaVFZs/WXpJMlhrRXlYa0Zx/Y0djQC5qcGc"
+                alt="O-Telefone-Preto-2"
+                class="carto-img"
+              />
+              <div>
+                <button class="ver-mais"onclick="abrirSinopse(3)">Ver mais</button>
+              </div>
+            </div>
+            <div class="texto-cartao">
+              <p>O Telefone Preto 2</p>
+            </div>
+          </li>
+          <li id="filme4">
+            <div class="cartao">
+              <img
+                src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-fdee28bf-a1b1-4726-b428-c90f24939c7b.png&w=1920&q=100"
+                alt="Chainsaw-man"
+                class="cartao-img"
+              />
+              <div>
+                <button class="ver-mais"onclick="abrirSinopse(4)">Ver mais</button>
+              </div>
+            </div>
+            <div class="texto-cartao">
+              <p>Chainsaw Man<br />Reze Arc</p>
+            </div>
+          </li>
+          <li id="filme5">
+            <div class="cartao">
+              <img
+                src="https://imgs.search.brave.com/bx0_lOILXi0SudkOvhzsi5Gn73rxAakEqr526dyZO7g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk1tVXdNbUZs/TXprdFlXVmxOeTAw/TjJJMExXRmhNVFl0/WldJMlpUTTROMkkz/WlRrMFhrRXlYa0Zx/Y0djQC5qcGc"
+                alt="Interestelar"
+                class="cartao-img"
+              />
+              <div>
+                <button class="ver-mais"onclick="abrirSinopse(5)">Ver mais</button>
+              </div>
+            </div>
+            <div class="texto-cartao">
+              <p>Interestelar</p>
+            </div>
+          </li>
+          <li id="filme6">
+            <div class="cartao">
+              <img
+                src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-125dfeb8-172e-407f-b70a-b1a47998767d.png&w=1920&q=100"
+                alt="tubarao"
+                class="cartao-img"
+              />
+              <div>
+                <button class="ver-mais"onclick="abrirSinopse(6)">Ver mais</button>
+              </div>
+            </div>
+            <div class="texto-cartao">
+              <p>Tubarão</p>
+            </div>
+          </li>
+          <li id="filme7">
+            <div class="cartao">
+              <img
+                src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-c50f858a-a07d-4815-a02b-cce8e25321db.png&w=1920&q=100"
+                alt="A-noiva-cadaver"
+                class="cartao-img"
+              />
+              <div>
+                <button class="ver-mais"onclick="abrirSinopse(7)">Ver mais</button>
+              </div>
+            </div>
+            <div class="texto-cartao">
+              <p>A noiva cadáver</p>
+            </div>
+          </li>
         </ul>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input
-            type="search"
-            class="form-control form-control-dark text-bg-dark"
-            placeholder="Search..."
-            aria-label="Search"
-          />
-        </form>
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">
-            Login
-          </button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
-        </div>
+        <button class="seta seta-direita" onclick="arrowColor()">
+          &#10095;
+        </button>
       </div>
     </div>
-  </header>
-  <body>
-    <div class="banner"></div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
+  <script src="/js/filmes.js"></script>
+  <script src="/js/home.js"></script>
+  <script>
+    document.querySelectorAll(".carousel-conteiner").forEach((carrossel) => {
+      const esquerda = carrossel.querySelector(".seta-esquerda");
+      const direita = carrossel.querySelector(".seta-direita");
+      const lista = carrossel.querySelector(".filmes");
 
-    <div class="secao">
-      <h2 class="titulo-secao">Recomendados</h2>
-      <button type="button" class="btn btn-danger rounded-pill px-3">
-        Ver tudo
-      </button>
-    </div>
-    <div class="carousel-conteiner">
-      <button class="seta seta-esquerda">&#10094;</button>
-      <ul class="filmes">
-        <li id="filme1">
-          <div
-            class="cartao">
-          <img src="https://imgs.search.brave.com/TXVV526RqihhpaffcuPy25dby007tVxugGVn6JZmugA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/cG9zdGVyLWZvci1k/ZW1vbi1zbGF5ZXIt/a2ltZXRzdS1uby15/YWliYS1pbmZpbml0/eS1jYXN0bGUtdjAt/MW1zNnZsOHcyMm1l/MS5qcGVnP3dpZHRo/PTY0MCZjcm9wPXNt/YXJ0JmF1dG89d2Vi/cCZzPTRmNDRhZTEz/MmM2MDQ0YWIzMTkw/OTYzOWQ4N2Y5N2Q1/MzAwMDhiNDA" alt=""Demon-Slayer class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Demon Slayer:<br />Castelo Infinito</p>
-          </div>
-        </li>
-        <li id="filme2">
-          <div
-            class="cartao">
-           <img src="https://image.tmdb.org/t/p/original/rt1vZDwY9tIEOzLKMNRohW2DIZy.jpg" alt="Superman" class="cartao-img" />
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Superman</p>
-          </div>
-        </li>
-        <li id="filme3">
-          <div class="cartao">
-              <img src="https://imgs.search.brave.com/Xiv70oB-oAFWJhkcTBx-csutfgPlzYFP4j5_RxIDNUI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QllqSTRZekEz/TkdRdE9EZGtaUzAw/TjJFekxUZzVaVE10/WkRBd016QmhaVFZs/WXpJMlhrRXlYa0Zx/Y0djQC5qcGc" alt="O-Telefone-Preto-2" class="carto-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>O Telefone Preto 2</p>
-          </div>
-        </li>
-        <li id="filme4">
-          <div class="cartao">
-            <img src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-fdee28bf-a1b1-4726-b428-c90f24939c7b.png&w=1920&q=100" alt="Chainsaw-man" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Chainsaw Man<br />Reze Arc</p>
-          </div>
-        </li>
-        <li id="filme5">
-          <div class="cartao">
-            <img src="https://imgs.search.brave.com/bx0_lOILXi0SudkOvhzsi5Gn73rxAakEqr526dyZO7g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk1tVXdNbUZs/TXprdFlXVmxOeTAw/TjJJMExXRmhNVFl0/WldJMlpUTTROMkkz/WlRrMFhrRXlYa0Zx/Y0djQC5qcGc" alt="Interestelar" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Interestelar</p>
-          </div>
-        </li>
-        <li id="filme6">
-          <div class="cartao">
-            <img src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-125dfeb8-172e-407f-b70a-b1a47998767d.png&w=1920&q=100" alt="tubarao" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Tubarão</p>
-          </div>
-        </li>
-        <li id="filme7">
-          <div class="cartao">
-            <img src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-c50f858a-a07d-4815-a02b-cce8e25321db.png&w=1920&q=100" alt="A-noiva-cadaver" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>A noiva cadáver</p>
-          </div>
-        </li>
-      </ul>
-      <button class="seta seta-direita">&#10095;</button>
-    </div>
+      esquerda.addEventListener("click", () => {
+        carrossel
+          .querySelector(".filmes")
+          .scrollBy({ left: -300, behavior: "smooth" });
+      });
 
-    <div class="secao">
-      <h2 class="titulo-secao">Outra seção</h2>
-      <button type="button" class="btn btn-danger rounded-pill px-3">
-        Ver tudo
-      </button>
-    </div>
-    <div class="carousel-conteiner">
-      <button class="seta seta-esquerda">&#10094;</button>
-      <ul class="filmes">
-        <li id="filme1">
-          <div
-            class="cartao">
-          <img src="https://imgs.search.brave.com/TXVV526RqihhpaffcuPy25dby007tVxugGVn6JZmugA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/cG9zdGVyLWZvci1k/ZW1vbi1zbGF5ZXIt/a2ltZXRzdS1uby15/YWliYS1pbmZpbml0/eS1jYXN0bGUtdjAt/MW1zNnZsOHcyMm1l/MS5qcGVnP3dpZHRo/PTY0MCZjcm9wPXNt/YXJ0JmF1dG89d2Vi/cCZzPTRmNDRhZTEz/MmM2MDQ0YWIzMTkw/OTYzOWQ4N2Y5N2Q1/MzAwMDhiNDA" alt=""Demon-Slayer class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Demon Slayer:<br />Castelo Infinito</p>
-          </div>
-        </li>
-        <li id="filme2">
-          <div
-            class="cartao">
-           <img src="https://image.tmdb.org/t/p/original/rt1vZDwY9tIEOzLKMNRohW2DIZy.jpg" alt="Superman" class="cartao-img" />
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Superman</p>
-          </div>
-        </li>
-        <li id="filme3">
-          <div class="cartao">
-              <img src="https://imgs.search.brave.com/Xiv70oB-oAFWJhkcTBx-csutfgPlzYFP4j5_RxIDNUI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QllqSTRZekEz/TkdRdE9EZGtaUzAw/TjJFekxUZzVaVE10/WkRBd016QmhaVFZs/WXpJMlhrRXlYa0Zx/Y0djQC5qcGc" alt="O-Telefone-Preto-2" class="carto-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>O Telefone Preto 2</p>
-          </div>
-        </li>
-        <li id="filme4">
-          <div class="cartao">
-            <img src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-fdee28bf-a1b1-4726-b428-c90f24939c7b.png&w=1920&q=100" alt="Chainsaw-man" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Chainsaw Man<br />Reze Arc</p>
-          </div>
-        </li>
-        <li id="filme5">
-          <div class="cartao">
-            <img src="https://imgs.search.brave.com/bx0_lOILXi0SudkOvhzsi5Gn73rxAakEqr526dyZO7g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk1tVXdNbUZs/TXprdFlXVmxOeTAw/TjJJMExXRmhNVFl0/WldJMlpUTTROMkkz/WlRrMFhrRXlYa0Zx/Y0djQC5qcGc" alt="Interestelar" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Interestelar</p>
-          </div>
-        </li>
-        <li id="filme6">
-          <div class="cartao">
-            <img src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-125dfeb8-172e-407f-b70a-b1a47998767d.png&w=1920&q=100" alt="tubarao" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Tubarão</p>
-          </div>
-        </li>
-        <li id="filme7">
-          <div class="cartao">
-            <img src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-c50f858a-a07d-4815-a02b-cce8e25321db.png&w=1920&q=100" alt="A-noiva-cadaver" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>A noiva cadáver</p>
-          </div>
-        </li>
-      </ul>
-      <button class="seta seta-direita">&#10095;</button>
-    </div>
+      direita.addEventListener("click", () => {
+        carrossel
+          .querySelector(".filmes")
+          .scrollBy({ left: 300, behavior: "smooth" });
+      });
+    });
+    function openNav() {
+      document.getElementById("mySideNav").style.width = "240px";
+      document.getElementById("main").style.marginLeft = "240px";
+    }
+    function closeNav() {
+      document.getElementById("mySideNav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      showbtn();
+    }
+    function hidebtn() {
+      const btn = document.querySelector(".opn-btn");
+      btn.style.opacity = "0";
+      setTimeout(() => (btn.style.visibility = "hidden"), 300);
+    }
+    function showbtn() {
+      const btn = document.querySelector(".opn-btn");
+      btn.style.visibility = "visible";
+      btn.style.opacity = "1";
+    }
+    function arrowColor() {
+      const setas = document.querySelectorAll(".seta");
 
-    <div class="secao">
-      <h2 class="titulo-secao">Uma outra seção</h2>
-      <button type="button" class="btn btn-danger rounded-pill px-3">
-        Ver tudo
-      </button>
-    </div>
-    <div class="carousel-conteiner">
-      <button class="seta seta-esquerda">&#10094;</button>
-      <ul class="filmes">
-        <li id="filme1">
-          <div
-            class="cartao">
-          <img src="https://imgs.search.brave.com/TXVV526RqihhpaffcuPy25dby007tVxugGVn6JZmugA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/cG9zdGVyLWZvci1k/ZW1vbi1zbGF5ZXIt/a2ltZXRzdS1uby15/YWliYS1pbmZpbml0/eS1jYXN0bGUtdjAt/MW1zNnZsOHcyMm1l/MS5qcGVnP3dpZHRo/PTY0MCZjcm9wPXNt/YXJ0JmF1dG89d2Vi/cCZzPTRmNDRhZTEz/MmM2MDQ0YWIzMTkw/OTYzOWQ4N2Y5N2Q1/MzAwMDhiNDA" alt=""Demon-Slayer class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Demon Slayer:<br />Castelo Infinito</p>
-          </div>
-        </li>
-        <li id="filme2">
-          <div
-            class="cartao">
-           <img src="https://image.tmdb.org/t/p/original/rt1vZDwY9tIEOzLKMNRohW2DIZy.jpg" alt="Superman" class="cartao-img" />
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Superman</p>
-          </div>
-        </li>
-        <li id="filme3">
-          <div class="cartao">
-              <img src="https://imgs.search.brave.com/Xiv70oB-oAFWJhkcTBx-csutfgPlzYFP4j5_RxIDNUI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QllqSTRZekEz/TkdRdE9EZGtaUzAw/TjJFekxUZzVaVE10/WkRBd016QmhaVFZs/WXpJMlhrRXlYa0Zx/Y0djQC5qcGc" alt="O-Telefone-Preto-2" class="carto-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>O Telefone Preto 2</p>
-          </div>
-        </li>
-        <li id="filme4">
-          <div class="cartao">
-            <img src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-fdee28bf-a1b1-4726-b428-c90f24939c7b.png&w=1920&q=100" alt="Chainsaw-man" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Chainsaw Man<br />Reze Arc</p>
-          </div>
-        </li>
-        <li id="filme5">
-          <div class="cartao">
-            <img src="https://imgs.search.brave.com/bx0_lOILXi0SudkOvhzsi5Gn73rxAakEqr526dyZO7g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk1tVXdNbUZs/TXprdFlXVmxOeTAw/TjJJMExXRmhNVFl0/WldJMlpUTTROMkkz/WlRrMFhrRXlYa0Zx/Y0djQC5qcGc" alt="Interestelar" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Interestelar</p>
-          </div>
-        </li>
-        <li id="filme6">
-          <div class="cartao">
-            <img src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-125dfeb8-172e-407f-b70a-b1a47998767d.png&w=1920&q=100" alt="tubarao" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>Tubarão</p>
-          </div>
-        </li>
-        <li id="filme7">
-          <div class="cartao">
-            <img src="https://www.cinemark.com.br/_next/image?url=https%3A%2F%2Fcdnim.prd.cineticket.com.br%2Fimages%2Fcms%2FmoviePoster%2FMoviePoster-c50f858a-a07d-4815-a02b-cce8e25321db.png&w=1920&q=100" alt="A-noiva-cadaver" class="cartao-img">
-            <div>
-              <button class="ver-mais">Ver mais</button>
-            </div>
-          </div>
-          <div class="texto-cartao">
-            <p>A noiva cadáver</p>
-          </div>
-        </li>
-      </ul>
-      <button class="seta seta-direita">&#10095;</button>
-    </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      document.querySelectorAll(".carousel-conteiner").forEach((carrossel) => {
-        const esquerda = carrossel.querySelector(".seta-esquerda");
-        const direita = carrossel.querySelector(".seta-direita");
-        const lista = carrossel.querySelector(".filmes");
-
-        esquerda.addEventListener("click", () => {
-          carrossel
-            .querySelector(".filmes")
-            .scrollBy({ left: -300, behavior: "smooth" });
-        });
-
-        direita.addEventListener("click", () => {
-          carrossel
-            .querySelector(".filmes")
-            .scrollBy({ left: 300, behavior: "smooth" });
+      setas.forEach((seta) => {
+        seta.addEventListener("click", () => {
+          seta.style.color = "red";
+          setTimeout(() => {
+            seta.style.color = "";
+          }, 100);
         });
       });
-    </script>
-  </body>
+    }
+
+
+
+  </script>
   <footer
     class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
   >
