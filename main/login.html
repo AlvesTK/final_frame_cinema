@@ -6,13 +6,13 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='framefinal.css'>
-    <script src='login.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/login.css'>
+    <script src='../js/login.js'></script>
 </head>
 
 <body>
     <!-- Logo no canto -->
-    <img class="logo" src="/imgs,etc/logo.png" alt="Logo">
+    <img class="logo" src="/imgs/logo.png" alt="Logo">
     <!-- Caixa de login -->
     <div class="login-box">
         <h1>Login</h1>
@@ -21,7 +21,7 @@
             <input type="password" placeholder="Digite sua senha" required minlength="8" maxlength="8" id="senha">
 
             <div class="botoes">
-                <a href="" class="btn1">Registre-se</a>
+                <a href="/main/cadastre_se.html" class="btn1">Registre-se</a>
                 <button type="submit" class="btn">Entrar</button>
             </div>
         </form>
@@ -37,7 +37,7 @@
             if (senha === SENHA_TESTE) {
                 sessionStorage.setItem('usuarioLogado', usuario);
                 sessionStorage.setItem('logado', 'true');
-                location.href = '/home.html';
+                location.href = '../main/home.html';
             } else {
                 location.href = '/cadastro/cadrastre_se.html';
             }

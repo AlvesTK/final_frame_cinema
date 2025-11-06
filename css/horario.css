@@ -1,0 +1,80 @@
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(26, 26, 26);
+  overflow: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.side-nav a {
+  padding: 10px 8px 8px 8px;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+.side-nav a:hover {
+  color: rgb(226, 0, 0);
+}
+.opn-btn {
+  color: white;
+  font-size: 20px;
+  position: fixed;
+  margin-left: 20px;
+  margin-top: 15px;
+  border-radius: 12px;
+  height: 30px;
+  width: 38px;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.closebtn {
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  margin-left: 50px;
+  margin-top: 10px;
+  font-size: 35px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.form-control-dark {
+  border-color: var(--bs-black);
+}
+.voltar {
+  justify-content: left;
+  display: flex;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+h2 {
+  color: red;
+  padding-left: 50px;
+  padding-top: 30px;
+}
+
+h4{
+ padding-left: 50px;
+ padding-top: 30px;
+}
+
+.sala_vip {
+  justify-content: left;
+  display: flex;
+}
+body {
+  color: black;
+  background-color: rgb(20, 20, 20);
+}
