@@ -37,6 +37,26 @@ body {
 .side-nav a:hover{
   color: rgb(226, 0, 0);
 }
+#profile-pic {
+  border-radius: 50%;
+  margin-left: 28px;
+  width: 50px;
+  height: auto;
+  display: block;
+  transition: 0.1s;
+}
+.profile-btn{
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.profile-btn:hover img{
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: red;
+  outline-offset: 0px;
+}
 .opn-btn{
   color: white;
   font-size: 20px;
