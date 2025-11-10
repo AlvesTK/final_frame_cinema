@@ -10,7 +10,7 @@ globalThis.filmes = [
 
      {
         id: 2,
-        titulo:"superman",
+        titulo:"Superman",
         duracao: "1h40m",
         genero: "ação",
         classificacao: "12+",
@@ -84,4 +84,5 @@ function abrirSinopse(id) {
   localStorage.setItem('filmeSelecionado', id);
   globalThis.location.href = '../main/sinopse.html';
 }
+
 globalThis.abrirSinopse = abrirSinopse;
