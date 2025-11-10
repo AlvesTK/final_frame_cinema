@@ -82,6 +82,6 @@ globalThis.filmes = filmes;
 
 function abrirSinopse(id) {
   localStorage.setItem('filmeSelecionado', id);
-  globalThis.location.href = '/html/sinopse.html';
+  globalThis.location.href = '../main/sinopse.html';
 }
 globalThis.abrirSinopse = abrirSinopse;
