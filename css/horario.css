@@ -105,7 +105,7 @@ body {
 /* --- Quadrado das salas --- */
 .box-horario {
   background: var(--box);
-  border: 2px solid var(--accent);
+   /*border: 2px solid var(--accent); borda vermelha*/
   border-radius: 14px;
   max-width: 900px;
   margin: 40px auto;
@@ -184,4 +184,31 @@ footer.page-footer .nav a:hover {
     margin-left: 0;
     font-size: 1.2rem;
   }
+}
+/* --- Alinhamento suave entre dias e horários --- */
+.box-horario {
+  text-align: center;
+}
+
+.dias-semana,
+.horarios-titulo,
+.botoes-horario {
+  justify-content: center;
+  gap: 18px;
+}
+
+.dias-semana li,
+.horarios-titulo li,
+.botoes-horario .btn {
+  min-width: 80px; /* Mantém cada coluna alinhada */
+  text-align: center;
+}
+
+/* Faz com que cada linha (dias, horários, botões) fique bem encaixada */
+.box-horario ul,
+.box-horario .botoes-horario {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto; /* Evita quebra em telas pequenas */
 }
