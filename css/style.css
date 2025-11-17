@@ -1,0 +1,82 @@
+body {
+        font-family: Arial, sans-serif;
+        background-color: #000000;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: rgb(0, 0, 0);
+        color: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        color: #333;
+    }
+    .sala {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .assento {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        background-color: #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .assento.selecionado {
+        background-color: #6c6;
+    }
+    .assento.ocupado {
+        background-color: #f66;
+        cursor: not-allowed;
+    }
+    .assento.selecionado.ocupado {
+        background-color: #f66;
+        cursor: not-allowed;
+    }
+    .assento.selecionado.ocupado:hover {
+        background-color: #f66;
+    }
+    .assento:hover:not(.ocupado):not(.selecionado) {
+        background-color: #aaa;
+    }
+    .assento:focus {
+        outline: none;
+        box-shadow: 0 0 5px #333;
+    }
+    .assento:active {
+        transform: scale(0.95);
+    }
+    .assento:disabled {
+        background-color: #eee;
+        cursor: not-allowed;
+    }
+    .assento:disabled:hover {
+        background-color: #eee;
+    }
+    .assento:disabled:focus {
+        box-shadow: none;
+    }
+    .assento:disabled:active {
+        transform: none;
+    }
+    .assento:disabled.selecionado {
+        background-color: #ccc;
+    }
+    .tela {
+        width: 100%;
+        height: 50px;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
