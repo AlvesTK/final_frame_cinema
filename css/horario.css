@@ -9,8 +9,13 @@
 * {
   box-sizing: border-box;
 }
-
+html{
+  height: 100%;
+}
 body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   background: var(--bg);
   color: #fff;
@@ -19,6 +24,7 @@ body {
 
 /* --- Banner --- */
 .banner {
+  display: none;
   width: 100%;
   height: 35vh;
   background: 
@@ -66,6 +72,7 @@ body {
 
 /* --- Conteúdo principal --- */
 #main {
+  flex: 1;
   transition: margin-left .35s ease;
   padding-bottom: 20px;
 }
@@ -81,7 +88,7 @@ body {
   background: var(--accent);
   color: #fff;
   border: 0;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 20px;
   cursor: pointer;
   display: flex;
@@ -173,21 +180,24 @@ footer.page-footer .nav a {
 footer.page-footer .nav a:hover {
   color: var(--accent);
 }
-
-/* --- Responsivo --- */
-@media (max-width: 600px) {
-  .box-horario {
-    margin: 20px 12px;
-    padding: 18px;
-  }
-  .txt_escolha_horario {
-    margin-left: 0;
-    font-size: 1.2rem;
-  }
+#confirma-btn {
+    position: absolute;
+    bottom: 10%;  /* distância do rodapé da box */
+    right: 25%;   /* distância da borda direita */
+    width: 5%;   /* largura reduzida */
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform .18s ease, background .18s;
 }
+
 /* --- Alinhamento suave entre dias e horários --- */
 .box-horario {
   text-align: center;
+  position: relative;
 }
 
 .dias-semana,
@@ -211,4 +221,40 @@ footer.page-footer .nav a:hover {
   justify-content: center;
   flex-wrap: nowrap;
   overflow-x: auto; /* Evita quebra em telas pequenas */
+}
+/* --- Responsivo --- */
+@media (max-width: 600px) {
+  .box-horario {
+    margin: 20px 12px;
+    padding: 18px;
+  }
+  .txt_escolha_horario {
+    margin-left: 0;
+    font-size: 1.2rem;
+  }
+      #confirma-btn {
+        width: 100px;       /* ainda menor em mobile */
+        padding: 6px 8px;
+        bottom: 5%;
+        right: 10%;
+        font-size: 0.85rem; /* tamanho da fonte ajustado */
+    }
+
+    
+}
+@media (max-width: 1024px) {
+    #confirma-btn {
+        width: 100px;       /* menor largura em telas menores */
+        padding: 8px 10px; /* padding proporcional */
+        bottom: 12%;      /* distância do canto inferior */
+        right: 12%;       /* distância da borda direita */
+    }
+}
+@media (max-width: 1200px) {
+    #confirma-btn {
+        width: 100px;       /* menor largura em telas menores */
+        padding: 8px 10px; /* padding proporcional */
+        bottom: 12%;      /* distância do canto inferior */
+        right: 12%;       /* distância da borda direita */
+    }
 }

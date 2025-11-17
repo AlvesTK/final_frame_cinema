@@ -10,28 +10,55 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/perfil.css" />
   </head>
   <body>
     <div class="side-nav" id="mySideNav">
       <button type="button" class="closebtn" onclick="closeNav()">
         &times;
       </button>
-      <button class="profile-btn">
-        <img src="https://imgs.search.brave.com/vg-ZvDgYOE1X6dZ3RorqcW-AnVPN_4uQRIw4szZ3cfo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzUzLzdj/LzhhLzUzN2M4YTc1/ZjAxNTk4ZWI3NTU5/NTUyZjRjNGIwZGM3/LmpwZw" alt="profile-pic" onclick="globalThis.location.href='#'" id="profile-pic">
-      </button>
       <a href="/main/home.html">Home</a>
-      <a href="/main/perfil.html">Minha conta</a>
       <a href="#">Sobre</a>
       <a href="#">Contatos</a>
       <a href="#">FAQs</a>
     </div>
+    <button type="button" class="opn-btn" onclick="openNav(); hidebtn();">
+      &#x2630;
+    </button>
 
     <div id="main">
-      <button type="button" class="opn-btn" onclick="openNav(); hidebtn();">
-        &#x2630;
-      </button>
       <div class="banner"></div>
+      <div class="profile">
+        <button
+          type="button"
+          class="btn btn-danger rounded-pill px-3"
+          onclick="globalThis.location.href='/main/home.html'"
+        >
+          &#10094; </button>
+          <div class="campo">
+          <button type="button" class="btn btn-primary" id="edt-perfil">Editar perfil</button>
+        </div>
+        <div class="profile-info">
+          <img
+            src="https://imgs.search.brave.com/vg-ZvDgYOE1X6dZ3RorqcW-AnVPN_4uQRIw4szZ3cfo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzUzLzdj/LzhhLzUzN2M4YTc1/ZjAxNTk4ZWI3NTU5/NTUyZjRjNGIwZGM3/LmpwZw"
+            alt="profile-pic"
+            onclick="globalThis.location.href='#'"
+            id="img-user"
+          />
+          <div class="campo">
+            <h1 style="font-weight: bolder">Username</h1>
+          </div>
+          <div class="campo">
+            <h5 style="color: gray">Email</h5>
+        </div>
+        <div class="campo">
+            <h5 style="color: gray">Telefone</h5>
+        </div>
+        <div class="campo">
+            <h5 style="color: gray">Endereço</h5>
+        </div>
+        
+      </div>
     </div>
   </body>
   <script
@@ -95,4 +122,3 @@
     </ul>
   </footer>
 </html>
->
