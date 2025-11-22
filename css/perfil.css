@@ -79,6 +79,12 @@ body {
 .campo h2 {
   margin-bottom: 5px;
 }
+.campo h1:hover{
+  cursor: pointer;
+}
+.campo h5:hover{
+  cursor: pointer;
+}
 input {
   width: 400px;
   padding: 8px;

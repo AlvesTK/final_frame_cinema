@@ -172,6 +172,10 @@ p {
   cursor: pointer;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
 
 /* FOOTER */
 footer.page-footer {

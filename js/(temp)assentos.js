@@ -36,8 +36,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const seatsParam = encodeURIComponent(selecionados.join(","));
     const totalParam = encodeURIComponent(valorAssentos.toFixed(2));
-
-    // redireciona para a página do snack bar (troque o caminho se quiser)
-    window.location.href = `/snekbar.html?seats=${seatsParam}&total=${totalParam}`;
   });
 });

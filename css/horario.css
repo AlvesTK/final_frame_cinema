@@ -193,7 +193,12 @@ footer.page-footer .nav a:hover {
     cursor: pointer;
     transition: transform .18s ease, background .18s;
 }
-
+#confirma-btn:hover{
+transform: scale(1.1);
+}
+a{
+  text-decoration: none;
+}
 /* --- Alinhamento suave entre dias e horários --- */
 .box-horario {
   text-align: center;

@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/ingresso.css" />
+    <link rel="stylesheet" href="/css/(temp)ingresso.css" />
   </head>
   <body>
     <div class="side-nav" id="mySideNav">
@@ -73,6 +73,33 @@
         <button type="submit" class="btn btn-secondary" id="confirma-btn">
           Confirmar
         </button>
+        <div id="popup" class="popup">
+          <div class="resumo-compra">
+            <button id="close-popup">&times;</button>
+            <h2>Resumo da compra:</h2>
+            <div class="info">
+              <h5>Nome:</h5>
+              <h5 id="nome">xx</h5>
+            </div>
+            <div class="info">
+              <h5>Assento:</h5>
+              <h5 id="assento">xx</h5>
+            </div>
+            <div class="info">
+              <h5>Horário:</h5>
+              <h5 id="horario">xx</h5>
+            </div>
+            <div class="info">
+              <h5>Ingresso:</h5>
+              <h5 id="ingresso">xx</h5>
+            </div>
+            <div class="info">
+              <h4 style="color: rgb(180, 0, 0);">Total:</h4>
+              <h4 style="color: rgb(180, 0, 0);" id="total">R$ xx</h4>
+            </div>
+            <button id="finaliza-popup" class="btn btn-primary">Finalizar</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
@@ -137,6 +164,11 @@
         tipo_ingresso.textContent=``;
       }
     });
+    const popup = document.getElementById('popup');
+    document.getElementById('confirma-btn').onclick = () => popup.style.display = 'flex';
+    document.getElementById('finaliza-popup').onclick = () => location.href = '/main/home.html';
+    document.getElementById('close-popup').onclick = ()=> popup.style.display = 'none';
+    
   </script>
   <footer
     class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
