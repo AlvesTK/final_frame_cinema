@@ -46,21 +46,22 @@
             id="img-user"
           />
           <div class="campo">
-            <h1 style="font-weight: bolder" id="username">Username</h1>
+            <form id="perfilForm" action="perfil">
+              <label for="nome">Nome</label>
+            <input id="nome" type="text">
+            <label for="email">Email</label>
+            <input id="email" type="email">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha">
+            <h5 style="color: gray" onclick="href='#'" id="meus-tickets" >Meus tickets</h5>
+            <div class="botoes-perfil">
+              <button type="button" id="cancela-edt" class="btn btn-secondary">&times;</button>
+              <button type="submit" id="confirma-edt" class="btn btn-secondary">Salvar</button>
+              <button type="button" id="apagaConta" class="btn btn-secondary">Excluir conta</button>
+            </div>
+            
+            </form>
           </div>
-          <div class="campo">
-            <h5 style="color: gray" id="email">Email</h5>
-        </div>
-        <div class="campo">
-            <h5 style="color: gray" id="telefone">Telefone</h5>
-        </div>
-        <div class="campo">
-            <h5 style="color: gray" id="endereco">Endereço</h5>
-        </div>
-        <div class="campo" >
-          <h5 style="color: gray" onclick="href='#'" id="meus-tickets" >Meus tickets</h5>
-        </div>
-        
       </div>
     </div>
   </body>
@@ -71,6 +72,7 @@
   ></script>
   <script src="/js/filmes.js"></script>
   <script src="/js/home.js"></script>
+  <script type="module" src="/js/perfil.js"></script>
   <script>
     function openNav() {
       document.getElementById("mySideNav").style.width = "240px";

@@ -7,7 +7,7 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/login.css'>
-    <script src='../js/login.js'></script>
+    <script type="module" src='/js/login.js'></script>
 </head>
 
 <body>
@@ -17,8 +17,8 @@
     <div class="login-box">
         <h1>Login</h1>
         <form id="loginForm">
-            <input type="email" placeholder="exemplo@gmail.com" required id="usuario">
-            <input type="password" placeholder="Digite sua senha" required minlength="8" maxlength="8" id="senha">
+            <input id="usuario" type="email" placeholder="exemplo@gmail.com" required>
+            <input id="senha" type="password" placeholder="Digite sua senha" required minlength="8" maxlength="15">
 
             <div class="botoes">
                 <a href="/main/cadastre_se.html" class="btn1">Registre-se</a>
@@ -26,23 +26,7 @@
             </div>
         </form>
     </div>
-    <script>
-       const SENHA_TESTE = '12345678'; // apenas para teste — não persista
-
-        document.getElementById('loginForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const usuario = document.getElementById('usuario').value;
-            const senha = document.getElementById('senha').value;
-
-            if (senha === SENHA_TESTE) {
-                sessionStorage.setItem('usuarioLogado', usuario);
-                sessionStorage.setItem('logado', 'true');
-                location.href = '../main/home.html';
-            } else {
-                location.href = '/cadastro/cadrastre_se.html';
-            }
-        });
-    </script>
+    
 </body>
 
 </html>
