@@ -218,7 +218,11 @@ a{
   min-width: 80px; /* Mantém cada coluna alinhada */
   text-align: center;
 }
-
+button.selected {
+  outline: 1px solid white !important;
+  background-color: #0d6efd !important;
+  color: white !important;
+}
 /* Faz com que cada linha (dias, horários, botões) fique bem encaixada */
 .box-horario ul,
 .box-horario .botoes-horario {
@@ -227,11 +231,29 @@ a{
   flex-wrap: nowrap;
   overflow-x: auto; /* Evita quebra em telas pequenas */
 }
+.btn-danger {
+  position: absolute;
+  left: 31%;
+  top: 20%;
+  border: none;
+  background-color: red !important;
+  border-radius: 8px;
+  width: 60px;
+  height: 35px;
+  z-index: 1000; 
+}
 /* --- Responsivo --- */
 @media (max-width: 600px) {
   .box-horario {
     margin: 20px 12px;
     padding: 18px;
+  }
+  .btn-danger {
+    position: static;
+    display: block;
+    margin: 14px auto 0;
+    width: 80px;
+    height: 34px;
   }
   .txt_escolha_horario {
     margin-left: 0;
@@ -254,7 +276,15 @@ a{
         bottom: 12%;      /* distância do canto inferior */
         right: 12%;       /* distância da borda direita */
     }
+    .btn-danger {
+    left: 20%;
+    top: 16%;
+    width: 65px;
+    height: 32px;
+  }
 }
+
+
 @media (max-width: 1200px) {
     #confirma-btn {
         width: 100px;       /* menor largura em telas menores */
@@ -262,4 +292,12 @@ a{
         bottom: 12%;      /* distância do canto inferior */
         right: 12%;       /* distância da borda direita */
     }
+}
+
+
+@media (max-width: 400px) {
+  .btn-danger {
+    width: 70px;
+    height: 30px;
+  }
 }
