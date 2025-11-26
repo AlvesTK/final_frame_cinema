@@ -24,8 +24,8 @@
       <button type="button" class="closebtn" onclick="closeNav()">
         &times;
       </button>
-      <a href="#">Minha conta</a>
       <a href="../main/home.html">Home</a>
+      <a href="../main/perfil.html">Minha conta</a>
       <a href="#">Sobre</a>
       <a href="#">Contatos</a>
       <a href="#">FAQs</a>
@@ -37,14 +37,14 @@
       </button>
       <div class="banner"></div>
       <div class="bg-2">
+        <button type="button" class="btn btn-secondary" onclick="location.href='/main/home.html'">&#10094;</button>
         <div class="card-filme">
           <img id="capa"
             src="https://imgs.search.brave.com/TXVV526RqihhpaffcuPy25dby007tVxugGVn6JZmugA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/cG9zdGVyLWZvci1k/ZW1vbi1zbGF5ZXIt/a2ltZXRzdS1uby15/YWliYS1pbmZpbml0/eS1jYXN0bGUtdjAt/MW1zNnZsOHcyMm1l/MS5qcGVnP3dpZHRo/PTY0MCZjcm9wPXNt/YXJ0JmF1dG89d2Vi/cCZzPTRmNDRhZTEz/MmM2MDQ0YWIzMTkw/OTYzOWQ4N2Y5N2Q1/MzAwMDhiNDA"
-            alt=""
-            Demon-Slayer
+            alt="Demon-Slayer"
             class="cartao-img"
           />
-          <button type="button" class="btn btn-danger rounded-pill px-3" id="btnComprarIngresso" onclick="comprarIngresso()">
+          <button type="button" class="btn btn-danger rounded-pill px-3" id="btnComprarIngresso" onclick="globalThis.location.href='/main/escolha_horario.html'">
           Comprar ingresso
         </button>
         </div>
@@ -80,8 +80,10 @@
       </div>
     </div>
   </body>
-  <script src="../js/filmes.js"></script>
-  <script src="../js/sinopse.js"></script>
+  <script type="module" src="../js/filmes.js"></script>
+  <script type="module" src="../js/resumoCompra.js" ></script>
+  <script type="module" src="../js/sinopse.js"></script>
+
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
@@ -89,6 +91,7 @@
   ></script>
 
   <script>
+    
     function openNav() {
       document.getElementById("mySideNav").style.width = "240px";
       document.getElementById("main").style.marginLeft = "240px";

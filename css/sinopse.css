@@ -17,7 +17,7 @@ body {
   background: 
   linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 20%),
   linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0,0,0,0) 20%),
-  url("https://wallpapercave.com/wp/wp4016031.jpg") center/cover no-repeat;
+  url("https://i.postimg.cc/Z4MWnmzN/FRAME-FINAL-BANNER-2.jpg") center/cover no-repeat;
 }
 
 .side-nav{
@@ -46,6 +46,7 @@ body {
   color: rgb(226, 0, 0);
 }
 .opn-btn{
+  z-index: 9999;
   color: white;
   font-size: 20px;
   position: fixed;
@@ -77,22 +78,33 @@ body {
 .bg-2{
   position: relative;
   top: -100px;
-  background-color: black;
+  background-color: rgb(32, 32, 32);
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px;
+  gap: 10px;
   border-radius: 12px;
   padding: 40px;
   width: 80%;
   height: 100%;
-
   min-height: 100vh;
   max-width: 1000px;
   margin: 0 auto 0;
   box-shadow:  0 4px 25px rgba(0, 0, 0, 0.6), 0 4px 30px rgba(0, 0, 0, 0.2);
 }
+
+.btn-secondary{
+  z-index: 1000;
+  left: 5px !important;
+  top: 5px !important;
+  background-color: red !important;
+  border: none;
+  width: min(7%, 100px) !important;
+  border-radius: 8px;
+  height: 40px;
+}
 .card-filme{
+  width: min(100%, 380px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -150,6 +162,35 @@ body {
   outline-width: 2px!important;
   transform: scale(1.1);
 }
+
+
 .border-top{
   align-items: center;
+}
+
+/*  RESPONSIVIDADE  */
+
+@media (max-width: 768px) {
+  .bg-2 {
+    flex-direction: column;
+    align-items: center;
+    top: -50px;
+    padding: 20px;
+    gap: 30x;
+  }
+
+  .btn-secondary{
+    position: absolute;
+    left: 15px !important;
+    top: 15px !important;
+    width: 40px !important;
+  }
+
+  .card-filme img {
+    width: 70%; /* imagem centralizada e menor */
+  }
+
+  .info {
+    grid-template-columns: repeat(2, auto);
+  }
 }

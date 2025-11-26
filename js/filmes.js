@@ -1,4 +1,4 @@
-globalThis.filmes = [
+export const filmes = [
     {   id: 1,
         titulo:"Demon Slayer: Castelo Infinito",
         duracao: "2h36m",
@@ -10,7 +10,7 @@ globalThis.filmes = [
 
      {
         id: 2,
-        titulo:"Superman",
+        titulo:"superman",
         duracao: "1h40m",
         genero: "ação",
         classificacao: "12+",
@@ -78,11 +78,9 @@ function add_filme(titulo, duracao, genero, classificacao, sinopse, capa){
     filmes.push(filme);
 }
 
-globalThis.filmes = filmes;
 
-function abrirSinopse(id) {
+export function abrirSinopse(id) {
   localStorage.setItem('filmeSelecionado', id);
-  globalThis.location.href = '../main/sinopse.html';
+  location.href = '../main/sinopse.html';
 }
-
 globalThis.abrirSinopse = abrirSinopse;

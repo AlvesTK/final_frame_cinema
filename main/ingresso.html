@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/ingresso.css" />
+  </head>
+  <body>
+    <div class="side-nav" id="mySideNav">
+      <button type="button" class="closebtn" onclick="closeNav()">
+        &times;
+      </button>
+      <button class="profile-btn">
+        <img
+          src="https://imgs.search.brave.com/vg-ZvDgYOE1X6dZ3RorqcW-AnVPN_4uQRIw4szZ3cfo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzUzLzdj/LzhhLzUzN2M4YTc1/ZjAxNTk4ZWI3NTU5/NTUyZjRjNGIwZGM3/LmpwZw"
+          alt="profile-pic"
+          onclick="globalThis.location.href='#'"
+          id="profile-pic"
+        />
+      </button>
+      <a href="../main/home.html">Home</a>
+      <a href="../main/perfil.html">Minha conta</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contatos</a>
+      <a href="#">FAQs</a>
+    </div>
+
+    <div id="main">
+      <button type="button" class="opn-btn" onclick="openNav(); hidebtn();">
+        &#x2630;
+      </button>
+      <div class="banner"></div>
+
+      <div class="pagina-ingresso">
+        <h3>Quase lá!...Escolha o Seu ingresso:</h3>
+        <div class="select-conteiner">
+          <label for="select">Selecione o tipo de ingresso</label>
+          <select name="select" id="select">
+            <option value="padrao" id="ing-padrao" class="option">
+              Padrão
+            </option>
+            <option value="vip" id="ing-vip" class="option">Vip</option>
+          </select>
+        </div>
+        <hr />
+        <div class="ingresso-conteiner">
+          <div class="tipo-ing-conteiner">
+            <h5>Ingresso:</h5>
+            <h2 id="tipo-ingresso">Normal</h2>
+          </div>
+          <div class="preco-conteiner">
+            <div class="meia-inteira" id="meia">
+              <h6>R$ 20</h6>
+            </div>
+            <div class="meia-inteira" id="inteira">
+              <h6>R$ 40</h6>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <button type="submit" class="btn btn-secondary" id="confirma-btn">
+          Confirmar
+        </button>
+        <div id="popup" class="popup">
+          <div class="resumo-compra">
+            <button id="close-popup">&times;</button>
+            <h2>Resumo da compra:</h2>
+            <div class="info">
+              <h5>Nome:</h5>
+              <h5 id="nome">xx</h5>
+            </div>
+            <div class="info">
+              <h5>filme:</h5>
+              <h5 id="filme">xx</h5>
+            </div>
+            <div class="info">
+              <h5>Assento:</h5>
+              <h5 id="assento">xx</h5>
+            </div>
+            <div class="info">
+              <h5>Horário:</h5>
+              <h5 id="horario">xx</h5>
+            </div>
+            <div class="info">
+              <h5>Ingresso:</h5>
+              <h5 id="ingresso">xx</h5>
+            </div>
+            <div class="info">
+              <h4 style="color: rgb(180, 0, 0);">Total:</h4>
+              <h4 style="color: rgb(180, 0, 0);" id="total">R$ xx</h4>
+            </div>
+            <button id="finaliza-popup" class="btn btn-primary">Finalizar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
+  <script src="../js/filmes.js"></script>
+  <script src="../js/home.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("mySideNav").style.width = "240px";
+      document.getElementById("main").style.marginLeft = "240px";
+      document.querySelector(".opn-btn").style.left = "260px";
+    }
+    function closeNav() {
+      document.getElementById("mySideNav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.querySelector(".opn-btn").style.left = "8px";
+      showbtn();
+    }
+    function hidebtn() {
+      const btn = document.querySelector(".opn-btn");
+      btn.style.opacity = "0";
+      setTimeout(() => (btn.style.visibility = "hidden"), 300);
+    }
+    function showbtn() {
+      const btn = document.querySelector(".opn-btn");
+      btn.style.visibility = "visible";
+      btn.style.opacity = "1";
+    }
+    const meia = document.getElementById("meia");
+    const inteira = document.getElementById("inteira");
+    const select = document.getElementById("select");
+    const tipo_ingresso = document.getElementById("tipo-ingresso");
+
+
+    select.addEventListener("change", ()=>{
+      const opcao = select.value;
+      if (opcao === 'padrao') {
+        meia.innerHTML = `<h6>R$ 20</h6>`;
+        meia.style.background = `linear-gradient(to top, rgb(37,37,37) 0%,rgb(59,59,59) 100%)`;
+        inteira.innerHTML = `<h6>R$ 40</h6>`;
+        inteira.style.background = `linear-gradient(to top, rgb(37,37,37) 0%,rgb(59,59,59) 100%)`;
+        tipo_ingresso.style.color = `white`;
+        tipo_ingresso.textContent=`Padrão`;
+      } else if(opcao==='vip'){
+        meia.innerHTML = `<h6 style="color: darkgoldenrod;" >R$ 45</h6>`;
+
+        meia.style.background = `linear-gradient(to top, rgba(60,0,0,1) 0%,rgba(128, 0,0,1) 100%)`;
+        inteira.innerHTML = `<h6 style="color: darkgoldenrod;" >R$ 90</h6>`;
+        inteira.style.background = `linear-gradient(to top, rgba(60,0,0,1) 0%,rgba(128, 0,0,1) 100%)`;
+        tipo_ingresso.style.color = `red`;
+        tipo_ingresso.textContent=`Vip`;
+      } else {
+        meia.innerHTML = ``;
+        meia.style.backgroundColor = ``;
+        inteira.innerHTML = ``;
+        inteira.style.backgroundColor = '';
+        tipo_ingresso.style.color = ``;
+        tipo_ingresso.textContent=``;
+      }
+    });
+    const popup = document.getElementById('popup');
+    document.getElementById('confirma-btn').onclick = () => popup.style.display = 'flex';
+    document.getElementById('finaliza-popup').onclick = () => location.href = '/main/home.html';
+    document.getElementById('close-popup').onclick = ()=> popup.style.display = 'none';
+    
+  </script>
+  <footer
+    class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+  >
+    <p class="col-md-4 mb-0 text-body-secondary">&copy; 2025 Company, Inc</p>
+
+    <a
+      href="/"
+      class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+      aria-label="Bootstrap"
+    >
+      <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+    </a>
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">Features</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">About</a>
+      </li>
+    </ul>
+  </footer>
+</html>

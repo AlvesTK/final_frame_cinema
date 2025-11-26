@@ -8,50 +8,37 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="../css/cadastre_se.css">
     <link rel="icon" type="image/png" href="../imgs,etc/logo.png">
-</head>
+    </head>
 
-<body>
-    <!-- Logo no canto esquerdo -->
-    <div class="logo">
-        <img src="../imgs/logo.png" alt="Logo">
-    </div>
+    <body>
+        <!-- Logo no canto esquerdo -->
+        <div class="logo">
+            <img src="https://i.postimg.cc/Z4MWnmzN/FRAME-FINAL-BANNER-2.jpg" alt="Logo">
+        </div>
 
-    <!-- Card de Registro -->
-    <div class="container">
-        <h1>Cadastro</h1>
-        <form onsubmit="return validarSenha()">
-            <input type="text" placeholder="Digite seu nome completo" required minlength="3">
-            <input type="email" placeholder="exemplo@gmail.com" required pattern=".+@gmail\.com">
-            <input id="senha" type="password" placeholder="Crie sua senha (mínimo 8 caracteres)" required minlength="8"
-                maxlength="8">
-            <input id="confirmar" type="password" placeholder="Confirme sua senha" required minlength="8" maxlength="8">
+        <!-- Card de Registro -->
+        <div class="container">
+            <h1>Cadastro</h1>
+            <form id="form">
+                <input id="nome" type="text" placeholder="Digite seu nome completo" required minlength="3">
+                <input id="email" type="email" placeholder="exemplo@gmail.com" required pattern=".+@gmail\.com">
+                <input id="senha" type="password" placeholder="Crie sua senha (mínimo 8 caracteres)" required minlength="8"
+                    maxlength="15">
+                <input id="confirmar" type="password" placeholder="Confirme sua senha" required minlength="8"
+                    maxlength="15">
 
-            <!-- Mensagem de erro -->
-            <p class="erro" id="erro-senha" style="color: red; font-size: 14px; display: none;">
-                As senhas não coincidem.
-            </p>
+                <!-- Mensagem de erro -->
+                <p class="erro" id="erro-senha" style="color: red; font-size: 14px; display: none;">
+                    As senhas não coincidem.
+                </p>
 
-            <div class="botoes">
-                <button type="submit" class="btn">Registrar</button>
-                <a type="button" class="btn1" href="../main/index.html">Voltar</a>
-            </div>
-        </form>
-    </div>
+                <div class="botoes">
+                    <button id="submit" type="submit" class="btn">Registrar</button>
+                    <a type="button" class="btn1" href="../main/index.html">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script type="module" src="../js/cadastro.js"></script>
 
-    <script>
-        function validarSenha() {
-            let senha = document.getElementById("senha").value;
-            let confirmar = document.getElementById("confirmar").value;
-            let erro = document.getElementById("erro-senha");
-
-            if (senha !== confirmar) {
-                erro.style.display = "block"; // mostra o erro
-                return false; // impede o envio
-            } else {
-                erro.style.display = "none"; // esconde se estiver certo
-                return true; // permite o envio
-            }
-        }
-    </script>
-</body>
 </html>

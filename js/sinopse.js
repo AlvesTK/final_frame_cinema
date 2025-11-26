@@ -1,3 +1,5 @@
+import {filmes} from '../js/filmes.js';
+
 const id = Number(localStorage.getItem("filmeSelecionado"));
 const filme = filmes.find(f => f.id === id);
 

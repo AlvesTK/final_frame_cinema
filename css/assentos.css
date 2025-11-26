@@ -1,0 +1,239 @@
+/* RESET BÁSICO */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* GARANTIR QUE O FOOTER VÁ PARA O FIM */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #121212;
+  color: white;
+}
+
+/* MAIN SEM CRIAR ESPAÇO INDESEJADO */
+#main {
+  flex: 1;
+  margin-top: 60px;
+  transition: margin-left .5s;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+  max-width: 600px;
+
+  width: 50%;
+  margin: auto;
+  background: rgb(66, 66, 66);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ASSENTOS */
+.sala {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
+  gap: 8px;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+.assento {
+  width: 32px;
+  height: 32px;
+  background-color: #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.assento:hover:not(.ocupado) {
+  background-color: #aaa;
+}
+
+.assento.selecionado {
+  background-color: #6c6 !important;
+}
+
+.assento.ocupado {
+  background-color: #f66;
+  cursor: not-allowed;
+}
+
+.tela {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+/* PARÁGRAFOS */
+p {
+  color: white;
+  text-align: center;
+  margin: 5px 0;
+}
+
+/* POSICIONAMENTO DO BOTÃO CONFIRMAR */
+#btnConfirmar {
+  display: block;
+  margin-left: auto;
+  margin-top: 20px;
+  width: fit-content;
+}
+
+/* SIDE NAV */
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: rgb(26, 26, 26);
+  overflow: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.side-nav a {
+  padding: 10px 8px;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.side-nav a:hover {
+  color: rgb(226, 0, 0);
+}
+
+/* FOTO PERFIL */
+#profile-pic {
+  display: none;
+  border-radius: 50%;
+  margin-left: 28px;
+  width: 50px;
+  height: auto;
+  transition: 0.1s;
+}
+
+.profile-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.profile-btn:hover img {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: red;
+}
+
+/* BOTÃO DE ABRIR NAV */
+.opn-btn {
+  position: fixed;
+  top: 20px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+  border-radius: 12px;
+  height: 30px;
+  width: 38px;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity .3s ease;
+  z-index: 9999;
+}
+
+.closebtn {
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  margin-top: 10px;
+  font-size: 35px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+/* FOOTER */
+footer.page-footer {
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: #ddd;
+  margin-top: 40px;
+}
+
+footer.page-footer .nav a {
+  color: inherit;
+  opacity: .9;
+  text-decoration: none;
+}
+
+footer.page-footer .nav a:hover {
+  opacity: 1;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+    max-width: 95%;
+  }
+
+  .assento {
+    width: 26px;
+    height: 26px;
+  }
+
+  .opn-btn {
+    font-size: 18px;
+    width: 34px;
+    height: 28px;
+  }
+
+  #profile-pic {
+    width: 42px;
+    margin-left: 12px;
+  }
+
+  p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .assento {
+    width: 22px;
+    height: 22px;
+  }
+
+  .side-nav a {
+    font-size: 14px;
+  }
+
+  .closebtn {
+    font-size: 28px;
+  }
+}
