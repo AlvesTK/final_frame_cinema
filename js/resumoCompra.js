@@ -14,7 +14,7 @@ let resumo = JSON.parse(sessionStorage.getItem("resumoComp")) || {
 
 
 
-let historico = [];
+let historico = JSON.parse(localStorage.getItem("historicoCompras")) || [];
 const id = Number(localStorage.getItem('filmeSelecionado'));
 const filmeSelec = filmes.find(f => f.id === id);
 
@@ -27,4 +27,3 @@ if (filmeSelec) {
 }
 
 sessionStorage.setItem("resumoComp", JSON.stringify(resumo));
-localStorage.setItem('historicoCompras', JSON.stringify(historico));

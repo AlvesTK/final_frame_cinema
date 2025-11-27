@@ -79,7 +79,7 @@ function add_filme(titulo, duracao, genero, classificacao, sinopse, capa){
 }
 
 
-export function abrirSinopse(id) {
+ export function abrirSinopse(id) {
   localStorage.setItem('filmeSelecionado', id);
   location.href = '/main/sinopse.html';
 }

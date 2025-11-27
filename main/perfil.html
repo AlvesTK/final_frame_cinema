@@ -1,129 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/css/perfil.css" />
-  </head>
-  <body>
-    <div class="side-nav" id="mySideNav">
-      <button type="button" class="closebtn" onclick="closeNav()">
-        &times;
-      </button>
-      <a href="/main/home.html">Home</a>
-      <a href="#">Sobre</a>
-      <a href="#">Contatos</a>
-      <a href="#">FAQs</a>
-    </div>
-    <button type="button" class="opn-btn" onclick="openNav(); hidebtn();">
-      &#x2630;
-    </button>
 
-    <div id="main">
-      <div class="banner"></div>
-      <div class="profile">
-        <button
-          type="button"
-          class="btn btn-danger rounded-pill px-3"
-          onclick="globalThis.location.href='/main/home.html'"
-        >
-          &#10094; </button>
-          <div class="campo">
-          <button type="button" class="btn btn-primary" id="edt-perfil">Editar perfil</button>
-        </div>
-        <div class="profile-info">
-          <img
-            src="https://imgs.search.brave.com/vg-ZvDgYOE1X6dZ3RorqcW-AnVPN_4uQRIw4szZ3cfo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzUzLzdj/LzhhLzUzN2M4YTc1/ZjAxNTk4ZWI3NTU5/NTUyZjRjNGIwZGM3/LmpwZw"
-            alt="profile-pic"
-            onclick="globalThis.location.href='#'"
-            id="img-user"
-          />
-          <div class="campo">
-            <form id="perfilForm" action="perfil">
-              <label for="nome">Nome</label>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/perfil.css" />
+</head>
+
+<body>
+  <div class="side-nav" id="mySideNav">
+    <button type="button" class="closebtn" onclick="closeNav()">
+      &times;
+    </button>
+    <a href="/main/home.html">Home</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contatos</a>
+    <a href="#">FAQs</a>
+  </div>
+  <button type="button" class="opn-btn" onclick="openNav(); hidebtn();">
+    &#x2630;
+  </button>
+
+  <div id="main">
+    <div class="banner"></div>
+    <div class="profile">
+      <button type="button" class="btn btn-danger rounded-pill px-3"
+        onclick="globalThis.location.href='/main/home.html'">
+        &#10094; </button>
+      <div class="campo">
+        <button type="button" class="btn btn-primary" id="edt-perfil">Editar perfil</button>
+      </div>
+      <div class="profile-info">
+        <img
+          src="https://imgs.search.brave.com/vg-ZvDgYOE1X6dZ3RorqcW-AnVPN_4uQRIw4szZ3cfo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzUzLzdj/LzhhLzUzN2M4YTc1/ZjAxNTk4ZWI3NTU5/NTUyZjRjNGIwZGM3/LmpwZw"
+          alt="profile-pic" onclick="globalThis.location.href='#'" id="img-user" />
+        <div class="campo">
+          <form id="perfilForm" action="perfil">
+            <label for="nome">Nome</label>
             <input id="nome" type="text">
             <label for="email">Email</label>
             <input id="email" type="email">
             <label for="senha">Senha</label>
             <input type="password" name="senha" id="senha">
-            <h5 style="color: gray" onclick="href='#'" id="Histórico de tickets">Meus tickets</h5>
+            <h5 style="color: gray" onclick="href='#'" id="historico">Histórico de compras</h5>
+            <div id="popup" class="popup">
+              <div id="conteudo-historico" class="conteudo-popup">
+                <button type="button" id="close-popup">&times;</button>
+
+                <div id="historico-lista">
+                  
+                </div> 
+              </div>
+            </div>
             <div class="botoes-perfil">
               <button type="button" id="cancela-edt" class="btn btn-secondary">&times;</button>
               <button type="submit" id="confirma-edt" class="btn btn-secondary">Salvar</button>
               <button type="button" id="apagaConta" class="btn btn-secondary">Excluir conta</button>
             </div>
-            
-            </form>
-          </div>
+
+          </form>
+        </div>
       </div>
     </div>
-  </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"
-  ></script>
-  <script src="/js/filmes.js"></script>
-  <script src="/js/home.js"></script>
-  <script type="module" src="/js/perfil.js"></script>
-  <script>
-    function openNav() {
-      document.getElementById("mySideNav").style.width = "240px";
-      document.getElementById("main").style.marginLeft = "240px";
-    }
-    function closeNav() {
-      document.getElementById("mySideNav").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
-      showbtn();
-    }
-    function hidebtn() {
-      const btn = document.querySelector(".opn-btn");
-      btn.style.opacity = "0";
-      setTimeout(() => (btn.style.visibility = "hidden"), 300);
-    }
-    function showbtn() {
-      const btn = document.querySelector(".opn-btn");
-      btn.style.visibility = "visible";
-      btn.style.opacity = "1";
-    }
-  </script>
-  <footer
-    class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
-  >
-    <p class="col-md-4 mb-0 text-body-secondary">&copy; 2025 Company, Inc</p>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script type="module" src="/js/filmes.js"></script>
+<script src="/js/home.js"></script>
+<script type="module" src="/js/perfil.js"></script>
+<script>
+  function openNav() {
+    document.getElementById("mySideNav").style.width = "240px";
+    document.getElementById("main").style.marginLeft = "240px";
+  }
+  function closeNav() {
+    document.getElementById("mySideNav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    showbtn();
+  }
+  function hidebtn() {
+    const btn = document.querySelector(".opn-btn");
+    btn.style.opacity = "0";
+    setTimeout(() => (btn.style.visibility = "hidden"), 300);
+  }
+  function showbtn() {
+    const btn = document.querySelector(".opn-btn");
+    btn.style.visibility = "visible";
+    btn.style.opacity = "1";
+  }
+</script>
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <p class="col-md-4 mb-0 text-body-secondary">&copy; 2025 Company, Inc</p>
 
-    <a
-      href="/"
-      class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
-      aria-label="Bootstrap"
-    >
-      <svg class="bi me-2" width="40" height="32" aria-hidden="true">
-        <use xlink:href="#bootstrap"></use>
-      </svg>
-    </a>
-    <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">Features</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">About</a>
-      </li>
-    </ul>
-  </footer>
+  <a href="/"
+    class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+    aria-label="Bootstrap">
+    <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+      <use xlink:href="#bootstrap"></use>
+    </svg>
+  </a>
+  <ul class="nav col-md-4 justify-content-end">
+    <li class="nav-item">
+      <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link px-2 text-body-secondary">Features</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link px-2 text-body-secondary">Pricing</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link px-2 text-body-secondary">About</a>
+    </li>
+  </ul>
+</footer>
+
 </html>

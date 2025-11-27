@@ -87,7 +87,12 @@ proximo.addEventListener("click", function(e){
 
   if(resumoComp.horario && resumoComp.horario.trim() !== ""){
     location.href = '../main/ingresso.html';
-  } else{
+  }else if(!resumoComp.nome || resumoComp.nome !== ""){
+    alert("Nome de usuário não identificado. Faça login ou cadastre-se para avançar.");
+    return;
+  }
+  
+  else{
     alert("Selecione um horário antes de avançar.");
   }
 });

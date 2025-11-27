@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // definido variáveis
   const assentos = document.querySelectorAll(".assento");
   const btnConfirmar = document.getElementById("btnConfirmar");
   const voltar = document.getElementById("btn-voltar");
   let resumoComp = JSON.parse(sessionStorage.getItem("resumoComp")) || {};
-  let historico = JSON.parse(localStorage.getItem("historicoCompras")) || [];
+  let historico = JSON.parse(sessionStorage.getItem("historicoCompras")) || [];
 
   let Rnome = document.getElementById("nome");
   let Rfilme = document.getElementById("filme");
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let RintMeia = document.getElementById("Int-meia");
   let RprcFinal = document.getElementById("total");
 
-  // checando existencia de assentos
   if (!Array.isArray(resumoComp.assentos)) {
     resumoComp.assentos = [];
   }
@@ -23,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const popup = document.getElementById("popup");
 
-  // clique nos assentos
   assentos.forEach((assento) => {
     assento.addEventListener("click", () => {
       if (assento.classList.contains("ocupado")) return;
@@ -31,9 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (assento.classList.contains("selecionado")) {
         assento.classList.remove("selecionado");
-        resumoComp.assentos = resumoComp.assentos.filter(
-          (a) => a !== nomeAssento
-        );
+        resumoComp.assentos = resumoComp.assentos.filter((a) => a !== nomeAssento);
         sessionStorage.setItem("resumoComp", JSON.stringify(resumoComp));
         return;
       }
@@ -49,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // confirmar -> FINALIZAR
   btnConfirmar.addEventListener("click", () => {
     if (!resumoComp.assentos.length) {
       alert("Selecione pelo menos um assento antes de finalizar.");
@@ -72,11 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const categoria = resumoComp.ingresso.toLowerCase();
 
     let precoFinal = 0;
-
-    let prcMeiaPadrao = 20;
-    let prcIntPadrao = 40;
-    let prcMeiaVip = 45;
-    let prcIntVip = 90;
+    let prcMeiaPadrao = 20, prcIntPadrao = 40, prcMeiaVip = 45, prcIntVip = 90;
 
     Rnome.textContent = resumoComp.nome;
     Rfilme.textContent = resumoComp.filme;
@@ -86,26 +76,19 @@ document.addEventListener("DOMContentLoaded", () => {
     RqtdIng.textContent = resumoComp.qtd;
     RintMeia.textContent = resumoComp.intMei;
 
-    if (categoria === "vip") {
-      precoFinal =
-        tipoIngresso === "inteira" ? prcIntVip * qtd : prcMeiaVip * qtd;
-    } else {
-      precoFinal =
-        tipoIngresso === "inteira" ? prcIntPadrao * qtd : prcMeiaPadrao * qtd;
-    }
+    precoFinal = categoria === "vip"
+      ? (tipoIngresso === "inteira" ? prcIntVip * qtd : prcMeiaVip * qtd)
+      : (tipoIngresso === "inteira" ? prcIntPadrao * qtd : prcMeiaPadrao * qtd);
 
     resumoComp.precoFinal = precoFinal;
-    RprcFinal.textContent = precoFinal.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    });
+    RprcFinal.textContent = precoFinal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
   });
 
   document.getElementById("finaliza-popup").onclick = () => {
     historico.push({
       nome: resumoComp.nome,
       filme: resumoComp.filme,
-      assentos: [...resumoComp.assentos], 
+      assentos: [...resumoComp.assentos],
       horario: resumoComp.horario,
       ingresso: resumoComp.ingresso,
       intMei: resumoComp.intMei,
@@ -113,29 +96,18 @@ document.addEventListener("DOMContentLoaded", () => {
       precoFinal: resumoComp.precoFinal
     });
 
-    localStorage.setItem('historicoCompras', JSON.stringify(historico));
-
+    sessionStorage.setItem('historicoCompras', JSON.stringify(historico));
     sessionStorage.removeItem('resumoComp');
-
     location.href = '../main/home.html';
+  };
 
-  };  
-
-
-  document.getElementById("close-popup").onclick = () =>
-    (popup.style.display = "none");
+  document.getElementById("close-popup").onclick = () => (popup.style.display = "none");
 
   voltar.addEventListener("click", () => {
     if (Array.isArray(resumoComp.assentos) && resumoComp.assentos.length > 0) {
-      let confirmaVolta = prompt(
-        "Atenção! Voltar irá desfazer as alterações. Deseja voltar? Digite (s) para 'sim' e (n) para não."
-      );
-
-      if (!confirmaVolta) {
-        return;
-      }
+      let confirmaVolta = prompt("Atenção! Voltar irá desfazer as alterações. Deseja voltar? Digite (s) para 'sim' e (n) para não.");
+      if (!confirmaVolta) return;
       confirmaVolta = confirmaVolta.trim().toLowerCase();
-
       if (confirmaVolta === "s") {
         delete resumoComp.assentos;
         sessionStorage.setItem("resumoComp", JSON.stringify(resumoComp));
@@ -144,7 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       } else {
         alert("Inválido. Digite somente 's' ou 'n'.");
-        return;
       }
     } else {
       location.href = "../main/ingresso.html";
