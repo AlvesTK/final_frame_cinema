@@ -1,6 +1,6 @@
 # Final Frame - o Cinema HTML
 
-Cinema HTML feito com css, js, html e php (possivelmente).
+Cinema HTML feito com css, js e html.
 
 Para iniciar, abra a pagina index.html.
 
@@ -11,4 +11,5 @@ Rian Alves,
 Nicolas Rosa,
 Fabricio,
 Allan Yoshiro.
+
 
