@@ -104,13 +104,6 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.secao .px-3{
-  margin-right: 20vh;
-  margin-top: 2vh;
-  border-radius: 8px !important;
-  height: 40px;
-  background-color: red !important;
-}
 
 .carousel-conteiner{
   position: relative;
