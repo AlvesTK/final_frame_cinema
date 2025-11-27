@@ -1,14 +1,5 @@
 export const users = [
-    {
-        nome: "felipe",
-        email:"felipe@gmail.com",
-        senha:"felipe01"
-    },
-    {
-        nome:"mateus",
-        email:"mateus@gmail.com",
-        senha:"mateus01"
-    }
+
 ];
 localStorage.setItem("users", JSON.stringify(users));
 

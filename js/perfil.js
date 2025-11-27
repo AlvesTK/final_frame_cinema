@@ -10,6 +10,10 @@ const editarbtn = document.getElementById("edt-perfil");
 const salvaEdit = document.getElementById("confirma-edt");
 const cancelar = document.getElementById("cancela-edt");
 const excluir = document.getElementById("apagaConta");
+const historicoBtn = document.getElementById("historico");
+const popup = document.getElementById("popup");
+const closePopup = document.getElementById("close-popup");
+const conteudoHistorico = document.getElementById("conteudo-historico");
 
 nomeInput.readOnly = true;
 emailInput.readOnly = true;
@@ -21,7 +25,41 @@ if ((usuarioAtual && nomeInput) && (usuarioAtual && emailInput) && (usuarioAtual
     senhaInput.value = usuarioAtual.senha;
 }
 
+historicoBtn.onclick = () => {
+    carregarHistorico();
+    popup.style.display = 'flex';
+}
 
+closePopup.onclick = () =>{
+
+    popup.style.display = 'none';
+
+}
+
+function carregarHistorico() {
+    const historico = JSON.parse(sessionStorage.getItem("historicoCompras")) || [];
+    const lista = document.getElementById("historico-lista");
+
+    if (historico.length === 0) {
+        lista.innerHTML = "<h3>Nenhum ticket encontrado.</h3>";
+        return;
+    }
+
+    let html = "<h3>Histórico</h3><hr>";
+
+    historico.forEach(item => {
+        html += `
+            <div class="ticket-item mb-3 p-2 border rounded">
+                <p><b>Filme:</b> ${item.filme}</p>
+                <p><b>Horário:</b> ${item.horario}</p>
+                <p><b>Assentos:</b> ${item.assentos.join(", ")}</p>
+                <p><b>Ingresso:</b> ${item.ingresso}</p>
+            </div>
+        `;
+    });
+
+    lista.innerHTML = html;
+}
 editarbtn.addEventListener("click", function(e){
     e.preventDefault();
 
@@ -75,6 +113,7 @@ excluir.addEventListener("click", function(e){
 
         sessionStorage.removeItem('usuarioLogado');
         sessionStorage.removeItem('Logado');
+        sessionStorage.removeItem("historicoCompras");
 
         alert("Conta excluída com sucesso.");
         location.href = '/main/login.html';

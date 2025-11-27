@@ -237,6 +237,45 @@ input {
   display: flex;
   flex-direction: row;
 }
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7); 
+  justify-content: center;     
+  align-items: center;
+  z-index: 10000;              
+}
+#close-popup {
+  position: absolute;
+  top: 10px;
+  left: 10px;  
+  border: none;
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(255, 255, 255);
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudo-popup {
+    background: rgb(43, 43, 43);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
 form {
   display: flex;
   flex-direction: column;

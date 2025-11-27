@@ -3,6 +3,8 @@ const form = document.getElementById("loginForm");
 
 const users = JSON.parse(localStorage.getItem("users")) || [];
 
+localStorage.removeItem("historicoCompras");
+
 form.addEventListener("submit", function(e){
     e.preventDefault();
 
