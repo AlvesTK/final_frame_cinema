@@ -2,7 +2,7 @@
 
 Cinema HTML feito com css, js e html.
 
-Para iniciar, abra a pagina index.html.
+Para iniciar, abra a pagina login.html.
 
 Membros -
 Felipe Gonçalves,
