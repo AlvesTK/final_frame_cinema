@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/(temp)ingresso.css" />
+    <link rel="stylesheet" href="/css/ingresso.css" />
   </head>
   <body>
     <div class="side-nav" id="mySideNav">
@@ -41,8 +41,10 @@
         &#x2630;
       </button>
       <div class="banner"></div>
+      
 
       <div class="pagina-ingresso">
+        <button type="button" class="btn btn-danger" id="btn-voltar">&#10094;</button>
         <h3>Quase lá!...Escolha o Seu ingresso:</h3>
         <div class="select-conteiner">
           <label for="select">Selecione o tipo de ingresso</label>
@@ -52,6 +54,10 @@
             </option>
             <option value="vip" id="ing-vip" class="option">Vip</option>
           </select>
+          <label for="qtd-ingresso">Quantos ingressos deseja?</label>
+          <input id="qtd-ingresso" type="number" min="1" max="10">
+
+          
         </div>
         <hr />
         <div class="ingresso-conteiner">
@@ -61,49 +67,19 @@
           </div>
           <div class="preco-conteiner">
             <div class="meia-inteira" id="meia">
-              <h6>R$ 20</h6>
+              <h6>Meia R$ 20</h6>
             </div>
             <div class="meia-inteira" id="inteira">
-              <h6>R$ 40</h6>
+              <h6>Inteira R$ 40</h6>
             </div>
           </div>
         </div>
         <hr />
 
         <button type="submit" class="btn btn-secondary" id="confirma-btn">
-          Confirmar
+          Continuar
         </button>
-        <div id="popup" class="popup">
-          <div class="resumo-compra">
-            <button id="close-popup">&times;</button>
-            <h2>Resumo da compra:</h2>
-            <div class="info">
-              <h5>Nome:</h5>
-              <h5 id="nome">xx</h5>
-            </div>
-            <div class="info">
-              <h5>filme:</h5>
-              <h5 id="filme">xx</h5>
-            </div>
-            <div class="info">
-              <h5>Assento:</h5>
-              <h5 id="assento">xx</h5>
-            </div>
-            <div class="info">
-              <h5>Horário:</h5>
-              <h5 id="horario">xx</h5>
-            </div>
-            <div class="info">
-              <h5>Ingresso:</h5>
-              <h5 id="ingresso">xx</h5>
-            </div>
-            <div class="info">
-              <h4 style="color: rgb(180, 0, 0);">Total:</h4>
-              <h4 style="color: rgb(180, 0, 0);" id="total">R$ xx</h4>
-            </div>
-            <button id="finaliza-popup" class="btn btn-primary">Finalizar</button>
-          </div>
-        </div>
+        
       </div>
     </div>
   </body>
@@ -112,8 +88,9 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"
   ></script>
-  <script src="/js/filmes.js"></script>
-  <script src="/js/home.js"></script>
+  <script type="module" src="/js/filmes.js"></script>
+  <script type="module" src="/js/home.js"></script>
+  <script type="module" src="/js/ingresso.js"></script>
   <script>
     function openNav() {
       document.getElementById("mySideNav").style.width = "240px";
@@ -145,17 +122,17 @@
     select.addEventListener("change", ()=>{
       const opcao = select.value;
       if (opcao === 'padrao') {
-        meia.innerHTML = `<h6>R$ 20</h6>`;
+        meia.innerHTML = `<h6>Meia R$ 20</h6>`;
         meia.style.background = `linear-gradient(to top, rgb(37,37,37) 0%,rgb(59,59,59) 100%)`;
-        inteira.innerHTML = `<h6>R$ 40</h6>`;
+        inteira.innerHTML = `<h6>Inteira R$ 40</h6>`;
         inteira.style.background = `linear-gradient(to top, rgb(37,37,37) 0%,rgb(59,59,59) 100%)`;
         tipo_ingresso.style.color = `white`;
         tipo_ingresso.textContent=`Padrão`;
       } else if(opcao==='vip'){
-        meia.innerHTML = `<h6 style="color: darkgoldenrod;" >R$ 45</h6>`;
+        meia.innerHTML = `<h6 style="color: darkgoldenrod;" >Meia R$ 45</h6>`;
 
         meia.style.background = `linear-gradient(to top, rgba(60,0,0,1) 0%,rgba(128, 0,0,1) 100%)`;
-        inteira.innerHTML = `<h6 style="color: darkgoldenrod;" >R$ 90</h6>`;
+        inteira.innerHTML = `<h6 style="color: darkgoldenrod;" >Inteira R$ 90</h6>`;
         inteira.style.background = `linear-gradient(to top, rgba(60,0,0,1) 0%,rgba(128, 0,0,1) 100%)`;
         tipo_ingresso.style.color = `red`;
         tipo_ingresso.textContent=`Vip`;
@@ -168,10 +145,7 @@
         tipo_ingresso.textContent=``;
       }
     });
-    const popup = document.getElementById('popup');
-    document.getElementById('confirma-btn').onclick = () => popup.style.display = 'flex';
-    document.getElementById('finaliza-popup').onclick = () => location.href = '/main/home.html';
-    document.getElementById('close-popup').onclick = ()=> popup.style.display = 'none';
+    
     
   </script>
   <footer

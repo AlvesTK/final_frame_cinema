@@ -86,7 +86,7 @@ proximo.addEventListener("click", function(e){
 
 
   if(resumoComp.horario && resumoComp.horario.trim() !== ""){
-    location.href = '../main/(temp)assentos.html';
+    location.href = '../main/ingresso.html';
   } else{
     alert("Selecione um horário antes de avançar.");
   }

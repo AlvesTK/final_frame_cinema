@@ -7,7 +7,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/home.css" />
-  <link rel="stylesheet" href="/css/(temp)assentos.css">
+  <link rel="stylesheet" href="/css/assentos.css">
 </head>
 
 <body>
@@ -32,19 +32,17 @@
 
   <!-- CONTEÚDO PRINCIPAL -->
   <div class="container">
+    <button type="button" class="btn btn-danger" id="btn-voltar">&#10094;</button>
     <div id="SetordeAssentos">
+      
       <div class="tela">Escolha seu assento</div>
 
-      <!-- LOGO (se quiser mostrar a logo, descomente e ajuste o src) -->
-      <!--
-      <div class="logo-container">
-        <img src="/imgs/logo.png" alt="Logo" class="logo-assentos">
-      </div>
-      -->
-
       <!-- ASSENTOS -->
+       
       <div class="sala" id="lista-assentos">
+        
         <script>
+          
           // geração simples de assentos (executa durante o parse)
           const seats = [
             "a1","a2","a3","a4","a5","a6","a7","a8","a9","a10","a11","a12","a13","a14","a15","a16",
@@ -56,21 +54,57 @@
           });
         </script>
       </div>
+      
 
-      <p>Total de assentos selecionados: <span id="totalSelecionados">0</span></p>
-      <p>Preço por assento: R$ 20,00</p>
-      <p>Total a pagar: R$ <span id="totalPagar">0.00</span></p>
-
-      <!-- BOTÃO: finalizar/ir pro snack bar -->
-      <button id="btnConfirmar" class="btn btn-primary"> <a href="/main/(temp)ingresso.html">Confirmar e continuar</a></button>
+      <!-- BOTÃO: finalizar-->
+      <button id="btnConfirmar" class="btn btn-primary">Confirmar e finalizar</button>
     </div>
+        <div id="popup" class="popup">
+          <div class="resumo-compra">
+            <button id="close-popup">&times;</button>
+            <h2 style="color: white;">Resumo da compra:</h2>
+            <div class="info">
+              <h5 style="color: white;">Nome:</h5>
+              <h5  id="nome">xx</h5>
+            </div>
+            <div class="info">
+              <h5 style="color: white;">filme:</h5>
+              <h5 id="filme">xx</h5>
+            </div>
+            <div class="info">
+              <h5 style="color: white;">Assento:</h5>
+              <h5 id="assento">xx</h5>
+            </div>
+            <div class="info">
+              <h5 style="color: white;">Horário:</h5>
+              <h5 id="horario">xx</h5>
+            </div>
+            <div class="info">
+              <h5 style="color: white;">Ingresso:</h5>
+              <h5 id="ingresso">xx</h5>
+            </div>
+            <div class="info">
+              <h5 style="color: white;">Quantidade:</h5>
+              <h5 id="qtdIng">xx</h5>
+            </div>
+            <div class="info">
+              <h5 style="color: white;">Inteira/Meia:</h5>
+              <h5 id="Int-meia">xx</h5>
+            </div>
+            <div class="info">
+              <h4 style="color: rgb(255, 0, 0);">Total:</h4>
+              <h4 style="color: rgb(255, 0, 0);" id="total">R$ xx</h4>
+            </div>
+            <button id="finaliza-popup" class="btn btn-primary">Finalizar</button>
+          </div>
+        </div>
   </div>
 
   <!-- SCRIPTS (mantive os teus arquivos + o JS dos assentos no final) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/js/filmes.js"></script>
-  <script src="/js/home.js"></script>
-  <script src="/js/(temp)assentos.js" defer></script>
+  <script type="module" src="/js/filmes.js"></script>
+  <script type="module" src="/js/home.js"></script>
+  <script type="module" src="/js/assentos.js" defer></script>
 
   <!-- NAV helpers -->
   <script>
@@ -95,6 +129,7 @@
       btn.style.visibility = "visible";
       btn.style.opacity = "1";
     }
+    
   </script>
 
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">

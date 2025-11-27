@@ -5,11 +5,16 @@ import { filmes } from '../js/filmes.js';
 let resumo = JSON.parse(sessionStorage.getItem("resumoComp")) || {
     nome: "",
     filme: "",
-    assento: "",
+    assentos: "",
     horario: "",
-    ingresso: ""
+    ingresso: "",
+    qtd: "",
+    intMei: ""
 };
 
+
+
+let historico = [];
 const id = Number(localStorage.getItem('filmeSelecionado'));
 const filmeSelec = filmes.find(f => f.id === id);
 
@@ -22,3 +27,4 @@ if (filmeSelec) {
 }
 
 sessionStorage.setItem("resumoComp", JSON.stringify(resumo));
+localStorage.setItem('historicoCompras', JSON.stringify(historico));
